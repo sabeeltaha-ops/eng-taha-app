@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENG Taha — Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Cambria&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F6F5;
+    --bg-panel:#ffffff;
+    --ink:#000000;
+    --brass:#1B4F72;
+    --brass-dim:#123A54;
+    --alert:#C1560B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:var(--bg);color:var(--ink);font-family:'Cambria','Georgia',serif;
+  }
+  .card{
+    background:var(--bg-panel);border:1px solid rgba(27,79,114,0.15);border-radius:4px;
+    padding:32px 30px;width:280px;box-shadow:0 2px 6px rgba(27,79,114,0.08);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:26px;margin:0 0 20px;}
+  input[type=password]{
+    width:100%;padding:9px 10px;border:1px solid rgba(27,79,114,0.25);border-radius:2px;
+    font-family:'Cambria','Georgia',serif;font-size:14px;margin-bottom:14px;color:var(--ink);
+  }
+  button{
+    width:100%;padding:9px 10px;background:var(--brass-dim);color:#fff;border:none;
+    border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;
+  }
+  button:hover{background:var(--brass);}
+  .error{color:var(--alert);font-size:12.5px;margin-bottom:12px;}
+</style>
+</head>
+<body>
+  <form class="card" method="post">
+    <div class="eyebrow">Private dashboard</div>
+    <h1>ENG Taha</h1>
+    {% if error %}<div class="error">{{ error }}</div>{% endif %}
+    <input type="password" name="password" placeholder="Password" autofocus>
+    <button type="submit">Sign in</button>
+  </form>
+</body>
+</html>
